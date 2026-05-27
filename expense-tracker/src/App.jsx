@@ -1,11 +1,29 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 import { Input } from './components/Input'
 import { Summary } from './components/Summary'
 import {Graph} from './components/Graph'
 function App() {
 
-  const[log,setlog]=useState([]);
+  const[log,setlog]=useState(()=>{
+    const saved=localStorage.getItem("transactions");
+    
+    return saved
+    ?JSON.parse(saved):
+    [];
+  }
+  );
+  
+  useEffect(()=>{
+    localStorage.setItem("transactions",
+      JSON.stringify(log)
+    )
+  },[log])
+
+
+
+
+
   return (
     <div className='min-h-screen bg-gray-100 p-8'>
 

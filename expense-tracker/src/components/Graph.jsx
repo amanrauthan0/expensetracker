@@ -12,19 +12,19 @@ export function Graph({log}){
 
     for (let i = 0; i < log.length; i++) {
         if(log[i].category==="salary"){
-            salary=salary+log[i].amount;
+            salary=salary+ Number(log[i].amount);
         }else if(log[i].category==="investement"){
-            investement=investement+log[i].amount
+            investement=investement+ Number(log[i].amount)
         }else if(log[i].category==="groccery"){
-            groccery=groccery+log[i].amount
+            groccery=groccery+ Number(log[i].amount)
         }else if(log[i].category==="entertainment"){
-            entertainment=entertainment+log[i].amount
+            entertainment=entertainment+ Number(log[i].amount)
         }else if(log[i].category==="bills"){
-            bills=bills+log[i].amount
+            bills=bills+ Number(log[i].amount)
         }else if(log[i].category==="rent"){
-            rent=rent+log[i].amount
+            rent=rent+ Number(log[i].amount)
         }else if(log[i].category==="miscellaneous"){
-            miscellaneous=miscellaneous+log[i].amount
+            miscellaneous=miscellaneous+ Number( Number(log[i].amount))
         }       
     }
     
@@ -36,18 +36,17 @@ export function Graph({log}){
         series={[
             {
                 data:[
-                    {id:0,value:salary,label:"salary"},
-                    {id:1,value:investement,label:"investement"},
-                    {id:2,value:groccery,label:"groccery"},
-                    {id:3,value:entertainment,label:"entertainment"},
-                    {id:4,value:bills,label:"bills"},
-                    {id:5,value:rent,label:"rent"},
-                    {id:6,value:miscellaneous,label:"miscellaneous"}
+                    {id:0,value:investement,label:"investement"},
+                    {id:1,value:groccery,label:"groccery"},
+                    {id:2,value:entertainment,label:"entertainment"},
+                    {id:3,value:bills,label:"bills"},
+                    {id:4,value:rent,label:"rent"},
+                    {id:5,value:miscellaneous,label:"miscellaneous"}
                 ]
             }
         ]}
-        width={400}
-        height={200}
+        width={600}
+        height={400}
         />}
         </>
     )

@@ -28,10 +28,7 @@ export  function Summary({log}){
     return(
        <>
        <div  className=" p-10 grid grid-cols-3">
-        <div className="balance">
-            <h1>BALANCE</h1>
-            <p>Rs.{sum}</p>
-        </div>
+        
         <div className="income">
             <h1>INCOME</h1>
             <p>Rs.{income}</p>
@@ -39,6 +36,10 @@ export  function Summary({log}){
         <div className="expense">
             <h1>EXPENSE</h1>
             <p>Rs.{expense}</p>
+        </div>
+         <div className="balance">
+            <h1>BALANCE</h1>
+            <p>Rs.{sum}</p>
         </div>
        </div>
        </>

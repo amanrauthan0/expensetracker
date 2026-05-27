@@ -30,7 +30,7 @@ export function Input({log,setlog}){
     setlog(prev => 
         {
          const prevlog = [...prev,
-          { type, title, amount, category}];
+          { type, title, amount, category,date:new Date().toLocaleDateString()}];
           return prevlog;
         
         }
@@ -101,15 +101,15 @@ return(
 
   <h1 className="pl-2 mt-3">TRANSACTIONS</h1>
   
-  <ul className=" font-mono mt-3 space-y-3 ">
-
-    {log.map((item,i)=>(
+{ log.length>0 ? <ul className=" font-mono mt-3 space-y-3 ">
+      {log.map((item,i)=>(
         <li
         key={i}
         className="bg-gray-50 rounded-xl shadow-sm p-4 pb-2 flex justify-between items-center">
             <span className="w-10">{item.title}</span>
             <span className="w-10">{item.amount}</span>
             <span className="w-10">{item.type}</span>
+            <span className="w-10">{item.date}</span>
             <button
               type="button"
               onClick={() => {console.log("hello world") ;deletetransaction(i)}}
@@ -121,7 +121,7 @@ return(
         
     ))}
   
-  </ul>
+  </ul>: <div className="flex justify-center"><img src="notransaction.jpg" className="size-50"/></div>}
 
 </div>
     )
